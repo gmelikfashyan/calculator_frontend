@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <main>
+        <section id="calculator">
+            <div class="display-wrapper">
+                <input id="display" readonly>
+            </div>
+            <div class="button-container">
+                <button onclick="deleteAll()" class="operation">C</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">^</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">%</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">÷</button>
+                <button onclick="appendToDisplay(this.innerHTML)">7</button>
+                <button onclick="appendToDisplay(this.innerHTML)">8</button>
+                <button onclick="appendToDisplay(this.innerHTML)">9</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">×</button>
+                <button onclick="appendToDisplay(this.innerHTML)">4</button>
+                <button onclick="appendToDisplay(this.innerHTML)">5</button>
+                <button onclick="appendToDisplay(this.innerHTML)">6</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">-</button>
+                <button onclick="appendToDisplay(this.innerHTML)">1</button>
+                <button onclick="appendToDisplay(this.innerHTML)">2</button>
+                <button onclick="appendToDisplay(this.innerHTML)">3</button>
+                <button onclick="appendToDisplay(this.innerHTML)" class="operation">+</button>
+                <button onclick="appendToDisplay(this.innerHTML)">.</button>
+                <button onclick="appendToDisplay(this.innerHTML)">0</button>
+                <button onclick="erase()">⌫</button>
+                <button onclick="calculate()" class="operation">=</button>
+            </div>
+        </section>
+        <script>
+            document.querySelectorAll('button').forEach(element => {
+                element.addEventListener('touchstart', () => element.classList.add('on-hover'));
+                element.addEventListener('mouseover', () => element.classList.add('on-hover'));
+                element.addEventListener('mouseout', () => element.classList.remove('on-hover'));
+                element.addEventListener('touchend', () => element.classList.remove('on-hover'));
+                
+            });
+        </script>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
